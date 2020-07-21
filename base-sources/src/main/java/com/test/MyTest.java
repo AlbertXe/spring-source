@@ -1,5 +1,6 @@
 package com.test;
 
+import com.po.OriginClass;
 import com.po.Student;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,5 +20,12 @@ public class MyTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Student student = (Student) context.getBean("student");
         System.out.println(student.getName());
+    }
+
+    @Test
+    public void test3() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        OriginClass student = (OriginClass) context.getBean("originClass");
+        student.method("name");
     }
 }

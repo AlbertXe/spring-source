@@ -7,4 +7,11 @@
     <!--userDao的第一种实现方法映射的 bean -> userDaoImpl-->
     <bean id="student" class="com.po.Student">
     </bean>
+    <bean id="originClass" class="com.po.OriginClass">
+        <replaced-method name="method" replacer="replaceClass">
+            <arg-type match="java.lang.String"></arg-type>
+        </replaced-method>
+    </bean>
+    <bean id="replaceClass" class="com.po.ReplaceClass">
+    </bean>
 </beans>
