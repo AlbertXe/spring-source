@@ -1,6 +1,8 @@
 package com.po;
 
 import com.annotation.MyService;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
 /**
  * 86150
@@ -8,6 +10,8 @@ import com.annotation.MyService;
  * 2020/7/30 0:05
  */
 @MyService
+@Service
+@Scope(scopeName = "customer")
 public class AutoService {
     private String name = "jack";
 
