@@ -1,5 +1,6 @@
 package com.test;
 
+import com.po.AService;
 import com.po.OriginClass;
 import com.po.Student;
 import org.junit.Test;
@@ -12,6 +13,8 @@ public class MyTest {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com");
         Student student = (Student) context.getBean("student");
         System.out.println(student.getName());
+        AService aService = context.getBean(AService.class);
+        aService.aop();
 
     }
 
@@ -28,4 +31,6 @@ public class MyTest {
         OriginClass student = (OriginClass) context.getBean("originClass");
         student.method("name");
     }
+
+
 }
